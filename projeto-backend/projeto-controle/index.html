@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Projetos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Controle de Projetos</h1>
+
+        <div class="form-container">
+            <h2>Cadastrar Novo Projeto</h2>
+            <form id="formProjeto">
+                <label for="nomeProjeto">Nome do Projeto</label>
+                <input type="text" id="nomeProjeto" name="nomeProjeto" required>
+
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+
+                <label for="inicio">Data de Início</label>
+                <input type="date" id="inicio" name="inicio" required>
+
+                <label for="fim">Data de Fim</label>
+                <input type="date" id="fim" name="fim" required>
+
+                <button type="submit">Adicionar Projeto</button>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h2>Cadastrar Novo Funcionário</h2>
+            <form id="formFuncionario">
+                <label for="nomeFuncionario">Nome do Funcionário</label>
+                <input type="text" id="nomeFuncionario" name="nomeFuncionario" required>
+
+                <label for="setor">Setor</label>
+                <input type="text" id="setor" name="setor" required>
+
+                <label for="projetoAssociado">Selecione o Projeto</label>
+                <select id="projetoAssociado" name="projetoAssociado" required>
+                </select>
+
+                <button type="submit">Adicionar Funcionário</button>
+            </form>
+        </div>
+
+        <div class="projects-list">
+            <h2>Projetos Cadastrados</h2>
+            <table id="tabelaProjetos">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Data de Início</th>
+                        <th>Data de Fim</th>
+                        <th>Funcionários</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela"></tbody>
+            </table>
+            <p id="msgVazia" class="empty-msg" style="display:none">Nenhum projeto cadastrado ainda.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
