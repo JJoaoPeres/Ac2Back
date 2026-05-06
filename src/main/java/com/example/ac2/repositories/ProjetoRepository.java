@@ -13,10 +13,10 @@ import com.example.ac2.models.Projeto;
 @Repository
 public interface ProjetoRepository extends JpaRepository<Projeto, Integer> {
 
-    // a. Método que recebe o ID do projeto e retorna o projeto com a lista de funcionários vinculados
+    
     @Query("SELECT p FROM Projeto p JOIN FETCH p.funcionarios WHERE p.id = :id")
     Optional<Projeto> findByIdWithFuncionarios(Integer id);
 
-    // b. Método que recebe a data de início e fim e retorna todos os projetos com início nesse intervalo
+    
     List<Projeto> findByDataInicioBetween(LocalDate dataInicio, LocalDate dataFim);
 }

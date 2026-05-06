@@ -15,7 +15,7 @@ public class SetorServiceImpl implements SetorService {
     @Autowired
     private SetorRepository setorRepository;
 
-    // Método para adicionar um setor
+    
     @Override
     public void adicionar(SetorDTO setorDTO) {
         Setor setor = Setor.builder()
@@ -25,7 +25,7 @@ public class SetorServiceImpl implements SetorService {
         setorRepository.save(setor);
     }
 
-    // Método para buscar um setor por ID
+    
     @Override
     public SetorDTO buscarSetorPorId(Integer idSetor) {
         Setor setor = setorRepository.findById(idSetor)

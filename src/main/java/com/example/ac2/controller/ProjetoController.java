@@ -19,19 +19,19 @@ public class ProjetoController {
     @Autowired
     private ProjetoService projetoService;
 
-    // Método para adicionar um projeto
+    
     @PostMapping
     public void adicionar(@RequestBody ProjetoDTO projetoDTO) {
         projetoService.adicionar(projetoDTO);
     }
 
-    // Método para buscar um projeto por ID com a lista de funcionários
+    
     @GetMapping("/{id}")
     public DadosProjetoDTO buscarProjetoPorId(@PathVariable Integer id) {
         return projetoService.buscarProjetoPorId(id);
     }
 
-    // Método para vincular um funcionário a um projeto
+    
     @PostMapping("/{idProjeto}/funcionarios/{idFuncionario}")
     public void vincularFuncionario(@PathVariable Integer idProjeto, @PathVariable Integer idFuncionario) {
         projetoService.vincularFuncionario(idProjeto, idFuncionario);

@@ -21,15 +21,15 @@ public class FuncionarioController {
     @Autowired
     private FuncionarioService funcionarioService;
 
-    // Método para adicionar um funcionário
+    
     @PostMapping
     public void adicionar(@RequestBody FuncionarioDTO funcionarioDTO) {
         funcionarioService.adicionar(funcionarioDTO);
     }
 
-    // Método para buscar os projetos aos quais o funcionário está vinculado
+    
     @GetMapping("/{idFuncionario}/projetos")
     public List<DadosProjetoDTO> buscarProjetos(@PathVariable Integer idFuncionario) {
-        return funcionarioService.buscarProjetos(idFuncionario);  // Retorna diretamente a lista de projetos
+        return funcionarioService.buscarProjetos(idFuncionario);  
     }
 }

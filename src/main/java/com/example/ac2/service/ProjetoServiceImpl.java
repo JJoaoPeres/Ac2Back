@@ -22,7 +22,7 @@ public class ProjetoServiceImpl implements ProjetoService {
     @Autowired
     private FuncionarioRepository funcionarioRepository;
 
-    // Método para adicionar um projeto
+    
     @Override
     public void adicionar(ProjetoDTO projetoDTO) {
         Projeto projeto = Projeto.builder()
@@ -34,7 +34,7 @@ public class ProjetoServiceImpl implements ProjetoService {
         projetoRepository.save(projeto);
     }
 
-    // Método para buscar um projeto por ID com a lista de funcionários
+    
     @Override
     public DadosProjetoDTO buscarProjetoPorId(Integer id) {
         Projeto projeto = projetoRepository.findById(id)
@@ -54,7 +54,7 @@ public class ProjetoServiceImpl implements ProjetoService {
                 .build();
     }
 
-    // Método para vincular um funcionário a um projeto
+    
     @Override
     public void vincularFuncionario(Integer idProjeto, Integer idFuncionario) {
         Projeto projeto = projetoRepository.findById(idProjeto)

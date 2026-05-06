@@ -18,15 +18,16 @@ public class SetorController {
     @Autowired
     private SetorService setorService;
 
-    // Método para adicionar um setor
+    
     @PostMapping
     public void adicionar(@RequestBody SetorDTO setorDTO) {
-        setorService.adicionar(setorDTO);  // Chama o serviço para adicionar o setor
+        setorService.adicionar(setorDTO);  
     }
 
-    // Método para buscar um setor por ID
+    
     @GetMapping("/{idSetor}")
     public SetorDTO buscarSetorPorId(@PathVariable Integer idSetor) {
-        return setorService.buscarSetorPorId(idSetor);  // Chama o serviço para buscar o setor
+        return setorService.buscarSetorPorId(idSetor);  
+
     }
 }

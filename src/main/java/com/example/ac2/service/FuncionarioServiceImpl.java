@@ -24,7 +24,7 @@ public class FuncionarioServiceImpl implements FuncionarioService {
     @Autowired
     private ProjetoRepository projetoRepository;
 
-    // Método para adicionar um funcionário
+    
     @Override
     public void adicionar(FuncionarioDTO funcionarioDTO) {
         Funcionario funcionario = Funcionario.builder()
@@ -34,7 +34,7 @@ public class FuncionarioServiceImpl implements FuncionarioService {
         funcionarioRepository.save(funcionario);
     }
 
-    // Método para buscar todos os projetos de um funcionário
+    
     @Override
     public List<DadosProjetoDTO> buscarProjetos(Integer idFuncionario) {
         Optional<Funcionario> funcionario = funcionarioRepository.findById(idFuncionario);

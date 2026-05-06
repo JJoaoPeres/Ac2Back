@@ -34,13 +34,13 @@ public class Ac2Application {
     @Transactional
     public CommandLineRunner init() {
         return args -> {
-            // Inserir Setores
+            
             Setor setor1 = new Setor(null, "TI", null);
             Setor setor2 = new Setor(null, "Marketing", null);
             setor1 = setorRepository.save(setor1);
             setor2 = setorRepository.save(setor2);
 
-            // Inserir Projetos
+           
             Projeto projeto1 = new Projeto(null, "Desenvolvimento de Software",
                     LocalDate.of(2023, 1, 1), LocalDate.of(2023, 6, 30), null);
             Projeto projeto2 = new Projeto(null, "Campanha Publicitária",
@@ -48,7 +48,7 @@ public class Ac2Application {
             projeto1 = projetoRepository.save(projeto1);
             projeto2 = projetoRepository.save(projeto2);
 
-            // Inserir Funcionários
+            
             Funcionario funcionario1 = new Funcionario(null, "João Silva", setor1, List.of(projeto1, projeto2));
             Funcionario funcionario2 = new Funcionario(null, "Maria Souza", setor1, List.of(projeto1));
             Funcionario funcionario3 = new Funcionario(null, "Ana Costa", setor2, List.of(projeto2));
